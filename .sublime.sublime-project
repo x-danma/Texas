@@ -6,9 +6,5 @@
   ],
   "settings": {
     "tab_size": 2,
-    // "sublimegdb_workingdir": "${project}",
-    // "sublimegdb_commandline": "gdb --interpreter=mi ./a.out"
-    "sublimegdb_workingdir": "/home/christopher/tatakai",
-    "sublimegdb_commandline": "gdb --interpreter=mi ./a.out"
   }
 }
