@@ -250,3 +250,6 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Sublime-text workspace files (project files are OK to have in repo)
+*.sublime-workspace
