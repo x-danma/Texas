@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace TestApp
+namespace TexasHoldEm
 {
-    class Program
+    class ThreeOfAKind : TexasHandAsserter
     {
-        static void Main(string[] args)
+        public ThreeOfAKind() : base("Three Of A Kind", 3)
         {
-            
-    }
+
+        }
     }
 }
