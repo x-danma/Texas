@@ -14,7 +14,7 @@ namespace TexasHoldEm
         {
             Name = "Two Pairs";
         }
-        internal override List<Card> ReturnBestHand(List<Card> incomingCards)
+        public override List<Card> ReturnBestHand(List<Card> incomingCards)
         {
 
             FirstPair.Clear();

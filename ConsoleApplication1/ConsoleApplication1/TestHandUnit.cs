@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TexasHoldEm
 {
-    class TestHandUnit
+    public class TestHandUnit
     {
         public List<Card> TestHand { get; set; }
         public List<Card> CorrectBestHand { get; set; }

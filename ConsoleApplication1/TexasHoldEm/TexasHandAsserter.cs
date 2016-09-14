@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TexasHoldEm
 {
-    class TexasHandAsserter
+    public class TexasHandAsserter
     {
         public string Name { get; set; }
         protected int NumberOfCardsNeeded { get; set; }
@@ -23,7 +23,7 @@ namespace TexasHoldEm
         }
 
 
-        internal virtual List<Card> ReturnBestHand(List<Card> incomingCards)
+        public virtual List<Card> ReturnBestHand(List<Card> incomingCards)
         {
             finalRestQueue.Clear();
             startStack.Clear();
@@ -128,7 +128,7 @@ namespace TexasHoldEm
             {
                 SavedPairs.Enqueue(comparingStack.Pop());
             }
-            
+
             if (SavedPairs.Count == 4)
             {
                 foreach (Card cardInTwoPairs in SavedPairs)

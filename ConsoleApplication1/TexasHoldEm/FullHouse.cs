@@ -13,7 +13,7 @@ namespace TexasHoldEm
         {
 
         }
-        internal override List<Card> ReturnBestHand(List<Card> incomingCards)
+        public override List<Card> ReturnBestHand(List<Card> incomingCards)
         {
             FirstThreeOK = false;
             List<Card> firstThree = (new ThreeOfAKind()).ReturnBestHand(incomingCards);
