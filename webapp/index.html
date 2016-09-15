@@ -37,6 +37,22 @@
     }
 
   </style>
+  <script type="text/javascript">
+    var connection = new WebSocket('ws://localhost:1234');
+
+    connection.onopen = function() {
+      connection.send('Hello world');
+    };
+    connection.onerror = function(error) {
+      console.log('Websocket error: ' + error);
+    };
+    connection.onmessage = function(e) {
+      console.log('Received data: ' + e.data);
+    };
+    connection.onclose = function() {
+      console.log('Websocket closed');
+    };
+  </script>
 </head>
 <body>
 
