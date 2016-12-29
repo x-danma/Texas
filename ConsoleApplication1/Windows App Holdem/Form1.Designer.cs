@@ -37,22 +37,21 @@
             this.buttonStartNewGame = new System.Windows.Forms.Button();
             this.TableCardOneColour = new System.Windows.Forms.TextBox();
             this.TableCardOneNumber = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonNextCard = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TableCardFiveColour = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.TableCardFiveNumber = new System.Windows.Forms.TextBox();
-            this.TableCardFourColour = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TableCardFourNumber = new System.Windows.Forms.TextBox();
-            this.TableCardTwoColour = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.TableCardTwoNumber = new System.Windows.Forms.TextBox();
+            this.TableCardTwoColour = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.TableCardThreeColour = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.TableCardThreeNumber = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.TableCardFourNumber = new System.Windows.Forms.TextBox();
+            this.TableCardFourColour = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBoxBestPossibleHand = new System.Windows.Forms.GroupBox();
             this.BestHandCardFiveColour = new System.Windows.Forms.TextBox();
@@ -70,10 +69,16 @@
             this.BestHandCardTwoNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.BestHandCardOneNumber = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBoxBestPossibleHand.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // lableCardOne
@@ -140,7 +145,7 @@
             // 
             // TableCardOneColour
             // 
-            this.TableCardOneColour.Location = new System.Drawing.Point(23, 89);
+            this.TableCardOneColour.Location = new System.Drawing.Point(6, 53);
             this.TableCardOneColour.Name = "TableCardOneColour";
             this.TableCardOneColour.ReadOnly = true;
             this.TableCardOneColour.Size = new System.Drawing.Size(80, 20);
@@ -148,27 +153,18 @@
             // 
             // TableCardOneNumber
             // 
-            this.TableCardOneNumber.Location = new System.Drawing.Point(23, 63);
+            this.TableCardOneNumber.Location = new System.Drawing.Point(6, 27);
             this.TableCardOneNumber.Name = "TableCardOneNumber";
             this.TableCardOneNumber.ReadOnly = true;
             this.TableCardOneNumber.Size = new System.Drawing.Size(80, 20);
             this.TableCardOneNumber.TabIndex = 8;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.groupBox1.Controls.Add(this.buttonNextCard);
             this.groupBox1.Controls.Add(this.buttonStartNewGame);
-            this.groupBox1.Location = new System.Drawing.Point(24, 167);
+            this.groupBox1.Location = new System.Drawing.Point(24, 163);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 277);
             this.groupBox1.TabIndex = 10;
@@ -187,145 +183,150 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.TableCardFiveColour);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.TableCardFiveNumber);
-            this.groupBox2.Controls.Add(this.TableCardFourColour);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.TableCardFourNumber);
-            this.groupBox2.Controls.Add(this.TableCardTwoColour);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.TableCardTwoNumber);
-            this.groupBox2.Controls.Add(this.TableCardThreeColour);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.TableCardThreeNumber);
-            this.groupBox2.Controls.Add(this.TableCardOneColour);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.TableCardOneNumber);
-            this.groupBox2.Location = new System.Drawing.Point(177, 11);
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox2.Controls.Add(this.groupBox4);
+            this.groupBox2.Controls.Add(this.groupBox5);
+            this.groupBox2.Controls.Add(this.groupBox6);
+            this.groupBox2.Controls.Add(this.groupBox7);
+            this.groupBox2.Controls.Add(this.groupBox8);
+            this.groupBox2.Location = new System.Drawing.Point(355, 47);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(549, 150);
+            this.groupBox2.Size = new System.Drawing.Size(580, 150);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Table";
             // 
             // TableCardFiveColour
             // 
-            this.TableCardFiveColour.Location = new System.Drawing.Point(368, 89);
+            this.TableCardFiveColour.Location = new System.Drawing.Point(6, 53);
             this.TableCardFiveColour.Name = "TableCardFiveColour";
             this.TableCardFiveColour.ReadOnly = true;
             this.TableCardFiveColour.Size = new System.Drawing.Size(80, 20);
             this.TableCardFiveColour.TabIndex = 21;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(402, 47);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "5";
-            // 
             // TableCardFiveNumber
             // 
-            this.TableCardFiveNumber.Location = new System.Drawing.Point(368, 63);
+            this.TableCardFiveNumber.Location = new System.Drawing.Point(6, 27);
             this.TableCardFiveNumber.Name = "TableCardFiveNumber";
             this.TableCardFiveNumber.ReadOnly = true;
             this.TableCardFiveNumber.Size = new System.Drawing.Size(80, 20);
             this.TableCardFiveNumber.TabIndex = 20;
             // 
-            // TableCardFourColour
+            // groupBox4
             // 
-            this.TableCardFourColour.Location = new System.Drawing.Point(282, 89);
-            this.TableCardFourColour.Name = "TableCardFourColour";
-            this.TableCardFourColour.ReadOnly = true;
-            this.TableCardFourColour.Size = new System.Drawing.Size(80, 20);
-            this.TableCardFourColour.TabIndex = 18;
+            this.groupBox4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox4.Controls.Add(this.TableCardOneColour);
+            this.groupBox4.Controls.Add(this.TableCardOneNumber);
+            this.groupBox4.Location = new System.Drawing.Point(6, 36);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(109, 102);
+            this.groupBox4.TabIndex = 22;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "1";
             // 
-            // label4
+            // groupBox5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(316, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "4";
-            // 
-            // TableCardFourNumber
-            // 
-            this.TableCardFourNumber.Location = new System.Drawing.Point(282, 63);
-            this.TableCardFourNumber.Name = "TableCardFourNumber";
-            this.TableCardFourNumber.ReadOnly = true;
-            this.TableCardFourNumber.Size = new System.Drawing.Size(80, 20);
-            this.TableCardFourNumber.TabIndex = 17;
-            // 
-            // TableCardTwoColour
-            // 
-            this.TableCardTwoColour.Location = new System.Drawing.Point(109, 89);
-            this.TableCardTwoColour.Name = "TableCardTwoColour";
-            this.TableCardTwoColour.ReadOnly = true;
-            this.TableCardTwoColour.Size = new System.Drawing.Size(80, 20);
-            this.TableCardTwoColour.TabIndex = 15;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(143, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "2";
+            this.groupBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox5.Controls.Add(this.TableCardTwoNumber);
+            this.groupBox5.Controls.Add(this.TableCardTwoColour);
+            this.groupBox5.Location = new System.Drawing.Point(121, 36);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(109, 102);
+            this.groupBox5.TabIndex = 23;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "2";
             // 
             // TableCardTwoNumber
             // 
-            this.TableCardTwoNumber.Location = new System.Drawing.Point(109, 63);
+            this.TableCardTwoNumber.Location = new System.Drawing.Point(6, 27);
             this.TableCardTwoNumber.Name = "TableCardTwoNumber";
             this.TableCardTwoNumber.ReadOnly = true;
             this.TableCardTwoNumber.Size = new System.Drawing.Size(80, 20);
             this.TableCardTwoNumber.TabIndex = 14;
             // 
+            // TableCardTwoColour
+            // 
+            this.TableCardTwoColour.Location = new System.Drawing.Point(6, 53);
+            this.TableCardTwoColour.Name = "TableCardTwoColour";
+            this.TableCardTwoColour.ReadOnly = true;
+            this.TableCardTwoColour.Size = new System.Drawing.Size(80, 20);
+            this.TableCardTwoColour.TabIndex = 15;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox6.Controls.Add(this.TableCardThreeColour);
+            this.groupBox6.Controls.Add(this.TableCardThreeNumber);
+            this.groupBox6.Location = new System.Drawing.Point(236, 36);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(109, 102);
+            this.groupBox6.TabIndex = 24;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "3";
+            // 
             // TableCardThreeColour
             // 
-            this.TableCardThreeColour.Location = new System.Drawing.Point(195, 89);
+            this.TableCardThreeColour.Location = new System.Drawing.Point(6, 53);
             this.TableCardThreeColour.Name = "TableCardThreeColour";
             this.TableCardThreeColour.ReadOnly = true;
             this.TableCardThreeColour.Size = new System.Drawing.Size(80, 20);
             this.TableCardThreeColour.TabIndex = 12;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "3";
-            // 
             // TableCardThreeNumber
             // 
-            this.TableCardThreeNumber.Location = new System.Drawing.Point(195, 63);
+            this.TableCardThreeNumber.Location = new System.Drawing.Point(6, 27);
             this.TableCardThreeNumber.Name = "TableCardThreeNumber";
             this.TableCardThreeNumber.ReadOnly = true;
             this.TableCardThreeNumber.Size = new System.Drawing.Size(80, 20);
             this.TableCardThreeNumber.TabIndex = 11;
             // 
+            // groupBox7
+            // 
+            this.groupBox7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox7.Controls.Add(this.TableCardFourNumber);
+            this.groupBox7.Controls.Add(this.TableCardFourColour);
+            this.groupBox7.Location = new System.Drawing.Point(351, 36);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(109, 102);
+            this.groupBox7.TabIndex = 25;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "4";
+            // 
+            // TableCardFourNumber
+            // 
+            this.TableCardFourNumber.Location = new System.Drawing.Point(6, 27);
+            this.TableCardFourNumber.Name = "TableCardFourNumber";
+            this.TableCardFourNumber.ReadOnly = true;
+            this.TableCardFourNumber.Size = new System.Drawing.Size(80, 20);
+            this.TableCardFourNumber.TabIndex = 17;
+            // 
+            // TableCardFourColour
+            // 
+            this.TableCardFourColour.Location = new System.Drawing.Point(6, 53);
+            this.TableCardFourColour.Name = "TableCardFourColour";
+            this.TableCardFourColour.ReadOnly = true;
+            this.TableCardFourColour.Size = new System.Drawing.Size(80, 20);
+            this.TableCardFourColour.TabIndex = 18;
+            // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Turquoise;
             this.groupBox3.Controls.Add(this.handCardTwoColour);
             this.groupBox3.Controls.Add(this.lableCardOne);
             this.groupBox3.Controls.Add(this.handCardOneColour);
             this.groupBox3.Controls.Add(this.labelCardTwo);
             this.groupBox3.Controls.Add(this.handCardOneNumber);
             this.groupBox3.Controls.Add(this.handCardTwoNumber);
-            this.groupBox3.Location = new System.Drawing.Point(257, 178);
+            this.groupBox3.Location = new System.Drawing.Point(420, 329);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(469, 159);
+            this.groupBox3.Size = new System.Drawing.Size(500, 159);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Your Hand";
             // 
             // groupBoxBestPossibleHand
             // 
+            this.groupBoxBestPossibleHand.BackColor = System.Drawing.Color.Violet;
             this.groupBoxBestPossibleHand.Controls.Add(this.BestHandCardFiveColour);
             this.groupBoxBestPossibleHand.Controls.Add(this.label10);
             this.groupBoxBestPossibleHand.Controls.Add(this.BestHandCardFourColour);
@@ -341,7 +342,7 @@
             this.groupBoxBestPossibleHand.Controls.Add(this.BestHandCardTwoNumber);
             this.groupBoxBestPossibleHand.Controls.Add(this.label6);
             this.groupBoxBestPossibleHand.Controls.Add(this.BestHandCardOneNumber);
-            this.groupBoxBestPossibleHand.Location = new System.Drawing.Point(777, 20);
+            this.groupBoxBestPossibleHand.Location = new System.Drawing.Point(1046, 47);
             this.groupBoxBestPossibleHand.Name = "groupBoxBestPossibleHand";
             this.groupBoxBestPossibleHand.Size = new System.Drawing.Size(310, 482);
             this.groupBoxBestPossibleHand.TabIndex = 13;
@@ -473,11 +474,23 @@
             this.BestHandCardOneNumber.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardOneNumber.TabIndex = 23;
             // 
+            // groupBox8
+            // 
+            this.groupBox8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox8.Controls.Add(this.TableCardFiveColour);
+            this.groupBox8.Controls.Add(this.TableCardFiveNumber);
+            this.groupBox8.Location = new System.Drawing.Point(466, 36);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(109, 102);
+            this.groupBox8.TabIndex = 26;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 543);
+            this.ClientSize = new System.Drawing.Size(1368, 593);
             this.Controls.Add(this.groupBoxBestPossibleHand);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -487,11 +500,20 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBoxBestPossibleHand.ResumeLayout(false);
             this.groupBoxBestPossibleHand.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -507,22 +529,15 @@
         private System.Windows.Forms.Button buttonStartNewGame;
         private System.Windows.Forms.TextBox TableCardOneColour;
         private System.Windows.Forms.TextBox TableCardOneNumber;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox TableCardFiveColour;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TableCardFiveNumber;
         private System.Windows.Forms.TextBox TableCardFourColour;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TableCardFourNumber;
         private System.Windows.Forms.TextBox TableCardTwoColour;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TableCardTwoNumber;
-        private System.Windows.Forms.TextBox TableCardThreeColour;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TableCardThreeNumber;
         private System.Windows.Forms.Button buttonNextCard;
         private System.Windows.Forms.GroupBox groupBoxBestPossibleHand;
         private System.Windows.Forms.TextBox BestHandCardFiveColour;
@@ -540,6 +555,13 @@
         private System.Windows.Forms.TextBox BestHandCardTwoNumber;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox BestHandCardOneNumber;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox TableCardThreeColour;
+        private System.Windows.Forms.TextBox TableCardThreeNumber;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox8;
     }
 }
 

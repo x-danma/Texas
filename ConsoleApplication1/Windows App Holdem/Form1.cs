@@ -169,5 +169,6 @@ namespace Windows_App_Holdem
             TableCardFiveNumber.Text = "";
             TableCardFiveColour.Text = "";
         }
+
     }
 }
