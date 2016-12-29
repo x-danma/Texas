@@ -42,9 +42,9 @@ namespace TexasHoldEm
 
         private void RemoveFirstThreeFromIncomingCards(List<Card> incomingCards, List<Card> firstThree)
         {
-            incomingCards.RemoveAll(x => x.Number == firstThree[0].Number && x.Color == firstThree[0].Color);
-            incomingCards.RemoveAll(x => x.Number == firstThree[1].Number && x.Color == firstThree[1].Color);
-            incomingCards.RemoveAll(x => x.Number == firstThree[2].Number && x.Color == firstThree[2].Color);
+            incomingCards.RemoveAll(x => x.Number == firstThree[0].Number && x.Colour == firstThree[0].Colour);
+            incomingCards.RemoveAll(x => x.Number == firstThree[1].Number && x.Colour == firstThree[1].Colour);
+            incomingCards.RemoveAll(x => x.Number == firstThree[2].Number && x.Colour == firstThree[2].Colour);
 
         }
         protected override void FillOutHand(int numberOfCardsForFullHand)

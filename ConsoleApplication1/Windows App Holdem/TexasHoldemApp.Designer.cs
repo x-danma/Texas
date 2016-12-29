@@ -1,6 +1,6 @@
 ﻿namespace Windows_App_Holdem
 {
-    partial class Form1
+    partial class TexasHoldemApp
     {
         /// <summary>
         /// Required designer variable.

@@ -17,7 +17,7 @@ namespace TexasHoldEm
 
         protected override void CheckForMatch(Stack<Card> comparingStack, Card previousCard, List<Card> incomingCards)
         {
-            if ((comparingStack.Peek().Number == previousCard.Number - 1 || comparingStack.Peek().AlternativeNumber == previousCard.Number - 1) && comparingStack.Peek().Color == previousCard.Color && comparingStack.Count <= NumberOfCardsNeeded)
+            if ((comparingStack.Peek().Number == previousCard.Number - 1 || comparingStack.Peek().AlternativeNumber == previousCard.Number - 1) && comparingStack.Peek().Colour == previousCard.Colour && comparingStack.Count <= NumberOfCardsNeeded)
             {
 
             }

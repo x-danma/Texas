@@ -46,8 +46,8 @@ namespace TexasHoldEm
 
         private void RemoveFirstPairFromIncomingCards(List<Card> incomingCards, List<Card> firstPairHand)
         {
-            incomingCards.RemoveAll(x => x.Number == FirstPair[0].Number && x.Color == FirstPair[0].Color);
-            incomingCards.RemoveAll(x => x.Number == FirstPair[1].Number && x.Color == FirstPair[1].Color);
+            incomingCards.RemoveAll(x => x.Number == FirstPair[0].Number && x.Colour == FirstPair[0].Colour);
+            incomingCards.RemoveAll(x => x.Number == FirstPair[1].Number && x.Colour == FirstPair[1].Colour);
 
         }
     }

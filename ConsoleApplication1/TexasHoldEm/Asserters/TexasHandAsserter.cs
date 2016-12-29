@@ -46,7 +46,11 @@ namespace TexasHoldEm
                 {
                     Card previousCard = comparingStack.Peek();
                     comparingStack.Push(startStack.Pop());
+                    ///----------------------------------------------------------------------
+                    ///------------------------The Core Comparison---------------------------
                     CheckForMatch(comparingStack, previousCard, incomingCards);
+                    ///----------------------------------------------------------------------
+                    ///----------------------------------------------------------------------
                 }
 
                 if (comparingStack.Count == NumberOfCardsNeeded)
@@ -118,7 +122,7 @@ namespace TexasHoldEm
             //Remove saved pair from incoming cards. Otherwise Aces will be added again, and one pair of aces comes back again when Aces count as number=1.
             foreach (Card card in SavedPairs)
             {
-                incomingCards.RemoveAll(x => x.Number == card.Number && x.Color == card.Color);
+                incomingCards.RemoveAll(x => x.Number == card.Number && x.Colour == card.Colour);
             }
         }
 

@@ -10,10 +10,13 @@ namespace TexasHoldEm
     {
         public int Number { get; set; }
         public int AlternativeNumber { get; set; }
-        public String Color { get; set; }
+        public CardColour Colour { get; set; }
 
-
-        public Card(int number, string color)
+        public enum CardColour
+        {
+            Hearts, Spades, Diamonds, Clovers
+        }
+        public Card(int number, string colour)
         {
             this.Number = number;
             if (number == 14)
@@ -21,12 +24,31 @@ namespace TexasHoldEm
             else
                 this.AlternativeNumber = number;
 
-
-            this.Color = color;
+            if (colour == "Hearts")
+            {
+                this.Colour = CardColour.Hearts;
+            }
+            else if (colour == "Spades")
+            {
+                this.Colour = CardColour.Spades;
+            }
+            else if (colour == "Diamonds")
+            {
+                this.Colour = CardColour.Diamonds;
+            }
+            else if (colour == "Clovers")
+            {
+                this.Colour = CardColour.Clovers;
+            }
+            else
+            {
+                throw new Exception("Not a valid Colour for a Card");
+            }
+            
         }
         public override string ToString()
         {
-            return $"{this.Number} {this.Color} ";
+            return $"{this.Number} {this.Colour} ";
         }
     }
 }

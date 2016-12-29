@@ -27,7 +27,7 @@ namespace TexasHoldEm
             foreach (Card  card in TestHand)
             {
                 
-                Console.Write($"\t{card.Color}:{card.Number}");
+                Console.Write($"\t{card.Colour}:{card.Number}");
                 Console.Write("\n");
             }
         }
@@ -36,7 +36,7 @@ namespace TexasHoldEm
             foreach (Card card in CorrectBestHand)
             {
 
-                Console.Write($"\t{card.Color}:{card.Number}");
+                Console.Write($"\t{card.Colour}:{card.Number}");
                 Console.Write("\n");
             }
         }

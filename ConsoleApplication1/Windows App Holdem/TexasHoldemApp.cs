@@ -11,7 +11,7 @@ using TexasHoldEm;
 
 namespace Windows_App_Holdem
 {
-    public partial class Form1 : Form
+    public partial class TexasHoldemApp : Form
     {
         List<Card> yourHand = new List<Card>();
         List<Card> table = new List<Card>();
@@ -21,7 +21,7 @@ namespace Windows_App_Holdem
         /// </summary>
         public int tableState { get; set; }
 
-        public Form1()
+        public TexasHoldemApp()
         {
             InitializeComponent();
         }
@@ -83,35 +83,35 @@ namespace Windows_App_Holdem
 
             //Your Hand Cards
             handCardOneNumber.Text = yourHand[0].Number.ToString();
-            handCardOneColour.Text = yourHand[0].Color;
+            handCardOneColour.Text = yourHand[0].Colour.ToString();
 
             handCardTwoNumber.Text = yourHand[1].Number.ToString();
-            handCardTwoColour.Text = yourHand[1].Color;
+            handCardTwoColour.Text = yourHand[1].Colour.ToString();
 
 
             //Table Cards
 
             TableCardOneNumber.Text = table[0].Number.ToString();
-            TableCardOneColour.Text = table[0].Color;
+            TableCardOneColour.Text = table[0].Colour.ToString();
 
             TableCardTwoNumber.Text = table[1].Number.ToString();
-            TableCardTwoColour.Text = table[1].Color;
+            TableCardTwoColour.Text = table[1].Colour.ToString();
 
             TableCardThreeNumber.Text = table[2].Number.ToString();
-            TableCardThreeColour.Text = table[2].Color;
+            TableCardThreeColour.Text = table[2].Colour.ToString();
 
             if (tableState == 4)
             {
                 TableCardFourNumber.Text = table[3].Number.ToString();
-                TableCardFourColour.Text = table[3].Color;
+                TableCardFourColour.Text = table[3].Colour.ToString();
             }
             if (tableState == 5)
             {
                 TableCardFourNumber.Text = table[3].Number.ToString();
-                TableCardFourColour.Text = table[3].Color;
+                TableCardFourColour.Text = table[3].Colour.ToString();
 
                 TableCardFiveNumber.Text = table[4].Number.ToString();
-                TableCardFiveColour.Text = table[4].Color;
+                TableCardFiveColour.Text = table[4].Colour.ToString();
             }
 
             //Create Best Possible Hand
@@ -126,19 +126,19 @@ namespace Windows_App_Holdem
 
             //Display Best Possible Hand
             BestHandCardOneNumber.Text = bestPossibleHand[0].Number.ToString();
-            BestHandCardOneColour.Text = bestPossibleHand[0].Color;
+            BestHandCardOneColour.Text = bestPossibleHand[0].Colour.ToString();
 
             BestHandCardTwoNumber.Text = bestPossibleHand[1].Number.ToString();
-            BestHandCardTwoColour.Text = bestPossibleHand[1].Color;
+            BestHandCardTwoColour.Text = bestPossibleHand[1].Colour.ToString();
 
             BestHandCardThreeNumber.Text = bestPossibleHand[2].Number.ToString();
-            BestHandCardThreeColour.Text = bestPossibleHand[2].Color;
+            BestHandCardThreeColour.Text = bestPossibleHand[2].Colour.ToString();
 
             BestHandCardFourNumber.Text = bestPossibleHand[3].Number.ToString();
-            BestHandCardFourColour.Text = bestPossibleHand[3].Color;
+            BestHandCardFourColour.Text = bestPossibleHand[3].Colour.ToString();
 
             BestHandCardFiveNumber.Text = bestPossibleHand[4].Number.ToString();
-            BestHandCardFiveColour.Text = bestPossibleHand[4].Color;
+            BestHandCardFiveColour.Text = bestPossibleHand[4].Colour.ToString();
         }
 
         private void DisplayBlankCards()

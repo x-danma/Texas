@@ -52,15 +52,15 @@
   <ItemGroup>
     <Compile Include="API.cs" />
     <Compile Include="Card.cs" />
-    <Compile Include="FourOfAKind.cs" />
-    <Compile Include="FullHouse.cs" />
+    <Compile Include="Asserters\FourOfAKind.cs" />
+    <Compile Include="Asserters\FullHouse.cs" />
     <Compile Include="GameDealer.cs" />
-    <Compile Include="Pair.cs" />
+    <Compile Include="Asserters\Pair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StraightFlush.cs" />
-    <Compile Include="TexasHandAsserter.cs" />
-    <Compile Include="ThreeOfAKind.cs" />
-    <Compile Include="TwoPairs.cs" />
+    <Compile Include="Asserters\StraightFlush.cs" />
+    <Compile Include="Asserters\TexasHandAsserter.cs" />
+    <Compile Include="Asserters\ThreeOfAKind.cs" />
+    <Compile Include="Asserters\TwoPairs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

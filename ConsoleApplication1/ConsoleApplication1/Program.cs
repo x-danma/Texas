@@ -46,7 +46,7 @@ namespace TexasHoldEm
                             Console.Write($"\nTesthand Expected: \n");
                             testHandUnit.PrintCorrectBestHand();
                             Console.Write($"\nReceived : \n");
-                            foreach (Card card in best5CardHand) Console.Write($"\n\t{card.Color}:{card.Number}");
+                            foreach (Card card in best5CardHand) Console.Write($"\n\t{card.Colour}:{card.Number}");
                         }
                     }
                 }
@@ -88,9 +88,9 @@ namespace TexasHoldEm
         {
             for (int i = 2; i < 14; i++)
             {
-                foreach (string color in new List<string> { "Spades", "Hearts", "Diamonds", "Clovers" })
+                foreach (string Colour in new List<string> { "Spades", "Hearts", "Diamonds", "Clovers" })
                 {
-                    Deck.Add(new Card(i, color));
+                    Deck.Add(new Card(i, Colour));
                 }
             }
         }
