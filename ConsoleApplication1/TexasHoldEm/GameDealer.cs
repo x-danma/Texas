@@ -8,14 +8,24 @@ namespace TexasHoldEm
 {
     class GameDealer
     {
+        public static List<Card> Deck { get; set; } = new List<Card>();
+
+        private static List<Card> UsedCards { get; set; } = new List<Card>();
+
         public static void StartNewGame()
         {
-            List<Card> newDeck = CreateDeck();
+            Deck = CreateDeck();
         }
-        public static List<Card> GetStarterHand()
+
+
+        public static Card DrawTopCard()
         {
-            return new List<Card>();
+            Card returnCard = Deck[0];
+            UsedCards.Add(Deck[0]);
+            Deck.RemoveAt(0);
+            return returnCard;
         }
+
         private static List<Card> CreateDeck()
         {
             List<Card> newDeck = new List<Card>();
@@ -26,7 +36,28 @@ namespace TexasHoldEm
                     newDeck.Add(new Card(i, color));
                 }
             }
-            return newDeck;
+
+
+            List<Card> shuffledDeck = shuffleDeck(newDeck);
+
+
+            return shuffledDeck;
+        }
+
+        private static List<Card> shuffleDeck(List<Card> newDeck)
+        {
+            Random rand = new Random();
+            List<Card> shuffledDeck = new List<Card>();
+            
+
+            while (newDeck.Count > 0)
+            {
+                int randomIndex = rand.Next() % newDeck.Count;
+                shuffledDeck.Add(newDeck[randomIndex]);
+                newDeck.RemoveAt(randomIndex);
+                
+            }
+            return shuffledDeck;
         }
     }
 }

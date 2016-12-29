@@ -9,6 +9,7 @@ namespace TexasHoldEm
 {
     public class Program
     {
+
         static List<Card> Deck = new List<Card>();
         static List<TestHandUnit> HandsToTest = new List<TestHandUnit>();
         public static void Main(string[] args)

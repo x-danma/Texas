@@ -30,10 +30,10 @@
         {
             this.lableCardOne = new System.Windows.Forms.Label();
             this.labelCardTwo = new System.Windows.Forms.Label();
-            this.textBoxCardTwoNumber = new System.Windows.Forms.TextBox();
-            this.textBoxCardOneNumber = new System.Windows.Forms.TextBox();
-            this.textBoxCardOneColour = new System.Windows.Forms.TextBox();
-            this.textBoxCardTwoColour = new System.Windows.Forms.TextBox();
+            this.handCardTwoNumber = new System.Windows.Forms.TextBox();
+            this.handCardOneNumber = new System.Windows.Forms.TextBox();
+            this.handCardOneColour = new System.Windows.Forms.TextBox();
+            this.handCardTwoColour = new System.Windows.Forms.TextBox();
             this.buttonStartNewGame = new System.Windows.Forms.Button();
             this.TableCardOneColour = new System.Windows.Forms.TextBox();
             this.TableCardOneNumber = new System.Windows.Forms.TextBox();
@@ -94,33 +94,39 @@
             this.labelCardTwo.TabIndex = 1;
             this.labelCardTwo.Text = "Card Two";
             // 
-            // textBoxCardTwoNumber
+            // handCardTwoNumber
             // 
-            this.textBoxCardTwoNumber.Location = new System.Drawing.Point(259, 75);
-            this.textBoxCardTwoNumber.Name = "textBoxCardTwoNumber";
-            this.textBoxCardTwoNumber.Size = new System.Drawing.Size(162, 20);
-            this.textBoxCardTwoNumber.TabIndex = 2;
+            this.handCardTwoNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.handCardTwoNumber.Location = new System.Drawing.Point(259, 75);
+            this.handCardTwoNumber.Name = "handCardTwoNumber";
+            this.handCardTwoNumber.ReadOnly = true;
+            this.handCardTwoNumber.Size = new System.Drawing.Size(162, 29);
+            this.handCardTwoNumber.TabIndex = 2;
             // 
-            // textBoxCardOneNumber
+            // handCardOneNumber
             // 
-            this.textBoxCardOneNumber.Location = new System.Drawing.Point(87, 75);
-            this.textBoxCardOneNumber.Name = "textBoxCardOneNumber";
-            this.textBoxCardOneNumber.Size = new System.Drawing.Size(162, 20);
-            this.textBoxCardOneNumber.TabIndex = 3;
+            this.handCardOneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.handCardOneNumber.Location = new System.Drawing.Point(87, 75);
+            this.handCardOneNumber.Name = "handCardOneNumber";
+            this.handCardOneNumber.ReadOnly = true;
+            this.handCardOneNumber.Size = new System.Drawing.Size(162, 29);
+            this.handCardOneNumber.TabIndex = 3;
             // 
-            // textBoxCardOneColour
+            // handCardOneColour
             // 
-            this.textBoxCardOneColour.Location = new System.Drawing.Point(87, 114);
-            this.textBoxCardOneColour.Name = "textBoxCardOneColour";
-            this.textBoxCardOneColour.Size = new System.Drawing.Size(162, 20);
-            this.textBoxCardOneColour.TabIndex = 4;
+            this.handCardOneColour.Location = new System.Drawing.Point(87, 114);
+            this.handCardOneColour.Name = "handCardOneColour";
+            this.handCardOneColour.ReadOnly = true;
+            this.handCardOneColour.Size = new System.Drawing.Size(162, 20);
+            this.handCardOneColour.TabIndex = 4;
             // 
-            // textBoxCardTwoColour
+            // handCardTwoColour
             // 
-            this.textBoxCardTwoColour.Location = new System.Drawing.Point(259, 114);
-            this.textBoxCardTwoColour.Name = "textBoxCardTwoColour";
-            this.textBoxCardTwoColour.Size = new System.Drawing.Size(162, 20);
-            this.textBoxCardTwoColour.TabIndex = 5;
+            this.handCardTwoColour.Location = new System.Drawing.Point(259, 114);
+            this.handCardTwoColour.Name = "handCardTwoColour";
+            this.handCardTwoColour.ReadOnly = true;
+            this.handCardTwoColour.Size = new System.Drawing.Size(162, 20);
+            this.handCardTwoColour.TabIndex = 5;
             // 
             // buttonStartNewGame
             // 
@@ -136,6 +142,7 @@
             // 
             this.TableCardOneColour.Location = new System.Drawing.Point(23, 89);
             this.TableCardOneColour.Name = "TableCardOneColour";
+            this.TableCardOneColour.ReadOnly = true;
             this.TableCardOneColour.Size = new System.Drawing.Size(80, 20);
             this.TableCardOneColour.TabIndex = 9;
             // 
@@ -143,6 +150,7 @@
             // 
             this.TableCardOneNumber.Location = new System.Drawing.Point(23, 63);
             this.TableCardOneNumber.Name = "TableCardOneNumber";
+            this.TableCardOneNumber.ReadOnly = true;
             this.TableCardOneNumber.Size = new System.Drawing.Size(80, 20);
             this.TableCardOneNumber.TabIndex = 8;
             // 
@@ -175,6 +183,7 @@
             this.buttonNextCard.TabIndex = 7;
             this.buttonNextCard.Text = "Next Card";
             this.buttonNextCard.UseVisualStyleBackColor = true;
+            this.buttonNextCard.Click += new System.EventHandler(this.buttonNextCard_Click);
             // 
             // groupBox2
             // 
@@ -204,6 +213,7 @@
             // 
             this.TableCardFiveColour.Location = new System.Drawing.Point(368, 89);
             this.TableCardFiveColour.Name = "TableCardFiveColour";
+            this.TableCardFiveColour.ReadOnly = true;
             this.TableCardFiveColour.Size = new System.Drawing.Size(80, 20);
             this.TableCardFiveColour.TabIndex = 21;
             // 
@@ -220,6 +230,7 @@
             // 
             this.TableCardFiveNumber.Location = new System.Drawing.Point(368, 63);
             this.TableCardFiveNumber.Name = "TableCardFiveNumber";
+            this.TableCardFiveNumber.ReadOnly = true;
             this.TableCardFiveNumber.Size = new System.Drawing.Size(80, 20);
             this.TableCardFiveNumber.TabIndex = 20;
             // 
@@ -227,6 +238,7 @@
             // 
             this.TableCardFourColour.Location = new System.Drawing.Point(282, 89);
             this.TableCardFourColour.Name = "TableCardFourColour";
+            this.TableCardFourColour.ReadOnly = true;
             this.TableCardFourColour.Size = new System.Drawing.Size(80, 20);
             this.TableCardFourColour.TabIndex = 18;
             // 
@@ -243,6 +255,7 @@
             // 
             this.TableCardFourNumber.Location = new System.Drawing.Point(282, 63);
             this.TableCardFourNumber.Name = "TableCardFourNumber";
+            this.TableCardFourNumber.ReadOnly = true;
             this.TableCardFourNumber.Size = new System.Drawing.Size(80, 20);
             this.TableCardFourNumber.TabIndex = 17;
             // 
@@ -250,6 +263,7 @@
             // 
             this.TableCardTwoColour.Location = new System.Drawing.Point(109, 89);
             this.TableCardTwoColour.Name = "TableCardTwoColour";
+            this.TableCardTwoColour.ReadOnly = true;
             this.TableCardTwoColour.Size = new System.Drawing.Size(80, 20);
             this.TableCardTwoColour.TabIndex = 15;
             // 
@@ -266,6 +280,7 @@
             // 
             this.TableCardTwoNumber.Location = new System.Drawing.Point(109, 63);
             this.TableCardTwoNumber.Name = "TableCardTwoNumber";
+            this.TableCardTwoNumber.ReadOnly = true;
             this.TableCardTwoNumber.Size = new System.Drawing.Size(80, 20);
             this.TableCardTwoNumber.TabIndex = 14;
             // 
@@ -273,6 +288,7 @@
             // 
             this.TableCardThreeColour.Location = new System.Drawing.Point(195, 89);
             this.TableCardThreeColour.Name = "TableCardThreeColour";
+            this.TableCardThreeColour.ReadOnly = true;
             this.TableCardThreeColour.Size = new System.Drawing.Size(80, 20);
             this.TableCardThreeColour.TabIndex = 12;
             // 
@@ -289,18 +305,18 @@
             // 
             this.TableCardThreeNumber.Location = new System.Drawing.Point(195, 63);
             this.TableCardThreeNumber.Name = "TableCardThreeNumber";
+            this.TableCardThreeNumber.ReadOnly = true;
             this.TableCardThreeNumber.Size = new System.Drawing.Size(80, 20);
             this.TableCardThreeNumber.TabIndex = 11;
-            this.TableCardThreeNumber.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBoxCardTwoColour);
+            this.groupBox3.Controls.Add(this.handCardTwoColour);
             this.groupBox3.Controls.Add(this.lableCardOne);
-            this.groupBox3.Controls.Add(this.textBoxCardOneColour);
+            this.groupBox3.Controls.Add(this.handCardOneColour);
             this.groupBox3.Controls.Add(this.labelCardTwo);
-            this.groupBox3.Controls.Add(this.textBoxCardOneNumber);
-            this.groupBox3.Controls.Add(this.textBoxCardTwoNumber);
+            this.groupBox3.Controls.Add(this.handCardOneNumber);
+            this.groupBox3.Controls.Add(this.handCardTwoNumber);
             this.groupBox3.Location = new System.Drawing.Point(257, 178);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(469, 159);
@@ -336,6 +352,7 @@
             // 
             this.BestHandCardFiveColour.Location = new System.Drawing.Point(124, 387);
             this.BestHandCardFiveColour.Name = "BestHandCardFiveColour";
+            this.BestHandCardFiveColour.ReadOnly = true;
             this.BestHandCardFiveColour.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardFiveColour.TabIndex = 24;
             // 
@@ -352,6 +369,7 @@
             // 
             this.BestHandCardFourColour.Location = new System.Drawing.Point(124, 308);
             this.BestHandCardFourColour.Name = "BestHandCardFourColour";
+            this.BestHandCardFourColour.ReadOnly = true;
             this.BestHandCardFourColour.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardFourColour.TabIndex = 24;
             // 
@@ -359,6 +377,7 @@
             // 
             this.BestHandCardFiveNumber.Location = new System.Drawing.Point(124, 361);
             this.BestHandCardFiveNumber.Name = "BestHandCardFiveNumber";
+            this.BestHandCardFiveNumber.ReadOnly = true;
             this.BestHandCardFiveNumber.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardFiveNumber.TabIndex = 23;
             // 
@@ -375,6 +394,7 @@
             // 
             this.BestHandCardThreeColour.Location = new System.Drawing.Point(124, 233);
             this.BestHandCardThreeColour.Name = "BestHandCardThreeColour";
+            this.BestHandCardThreeColour.ReadOnly = true;
             this.BestHandCardThreeColour.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardThreeColour.TabIndex = 24;
             // 
@@ -382,6 +402,7 @@
             // 
             this.BestHandCardFourNumber.Location = new System.Drawing.Point(124, 282);
             this.BestHandCardFourNumber.Name = "BestHandCardFourNumber";
+            this.BestHandCardFourNumber.ReadOnly = true;
             this.BestHandCardFourNumber.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardFourNumber.TabIndex = 23;
             // 
@@ -398,6 +419,7 @@
             // 
             this.BestHandCardTwoColour.Location = new System.Drawing.Point(124, 158);
             this.BestHandCardTwoColour.Name = "BestHandCardTwoColour";
+            this.BestHandCardTwoColour.ReadOnly = true;
             this.BestHandCardTwoColour.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardTwoColour.TabIndex = 24;
             // 
@@ -405,6 +427,7 @@
             // 
             this.BestHandCardThreeNumber.Location = new System.Drawing.Point(124, 207);
             this.BestHandCardThreeNumber.Name = "BestHandCardThreeNumber";
+            this.BestHandCardThreeNumber.ReadOnly = true;
             this.BestHandCardThreeNumber.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardThreeNumber.TabIndex = 23;
             // 
@@ -421,6 +444,7 @@
             // 
             this.BestHandCardOneColour.Location = new System.Drawing.Point(124, 80);
             this.BestHandCardOneColour.Name = "BestHandCardOneColour";
+            this.BestHandCardOneColour.ReadOnly = true;
             this.BestHandCardOneColour.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardOneColour.TabIndex = 24;
             // 
@@ -428,6 +452,7 @@
             // 
             this.BestHandCardTwoNumber.Location = new System.Drawing.Point(124, 132);
             this.BestHandCardTwoNumber.Name = "BestHandCardTwoNumber";
+            this.BestHandCardTwoNumber.ReadOnly = true;
             this.BestHandCardTwoNumber.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardTwoNumber.TabIndex = 23;
             // 
@@ -444,6 +469,7 @@
             // 
             this.BestHandCardOneNumber.Location = new System.Drawing.Point(124, 54);
             this.BestHandCardOneNumber.Name = "BestHandCardOneNumber";
+            this.BestHandCardOneNumber.ReadOnly = true;
             this.BestHandCardOneNumber.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardOneNumber.TabIndex = 23;
             // 
@@ -474,10 +500,10 @@
 
         private System.Windows.Forms.Label lableCardOne;
         private System.Windows.Forms.Label labelCardTwo;
-        private System.Windows.Forms.TextBox textBoxCardTwoNumber;
-        private System.Windows.Forms.TextBox textBoxCardOneNumber;
-        private System.Windows.Forms.TextBox textBoxCardOneColour;
-        private System.Windows.Forms.TextBox textBoxCardTwoColour;
+        private System.Windows.Forms.TextBox handCardTwoNumber;
+        private System.Windows.Forms.TextBox handCardOneNumber;
+        private System.Windows.Forms.TextBox handCardOneColour;
+        private System.Windows.Forms.TextBox handCardTwoColour;
         private System.Windows.Forms.Button buttonStartNewGame;
         private System.Windows.Forms.TextBox TableCardOneColour;
         private System.Windows.Forms.TextBox TableCardOneNumber;

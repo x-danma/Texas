@@ -21,9 +21,14 @@ namespace TexasHoldEm
             return returnList;
         }
 
-        public static List<Card> GetStarterCards()
+        public static Card DrawTopCard()
         {
-           return GameDealer.GetStarterHand();
+           return GameDealer.DrawTopCard();
+        }
+
+        public static void StartNewGame()
+        {
+            GameDealer.StartNewGame();
         }
     }
 }
