@@ -28,7 +28,7 @@ namespace TexasHoldEm
         
         public override string ToString()
         {
-            return $"{this.Number} {this.Colour} ";
+            return $"{this.Number} {this.Colour.ToString()} ";
         }
     }
 }

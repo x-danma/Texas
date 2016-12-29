@@ -14,7 +14,7 @@ namespace Windows_App_Holdem
     public partial class TexasHoldemApp : Form
     {
         List<Card> yourHand = new List<Card>();
-        List<Card> table = new List<Card>();
+        List<Card> communityCards = new List<Card>();
         List<Card> bestPossibleHand = new List<Card>();
         /// <summary>
         /// The number of dealer cards on the joint table
@@ -46,10 +46,10 @@ namespace Windows_App_Holdem
             yourHand.Add(API.DrawTopCard());
             yourHand.Add(API.DrawTopCard());
 
-            table.Clear();
-            table.Add(API.DrawTopCard());
-            table.Add(API.DrawTopCard());
-            table.Add(API.DrawTopCard());
+            communityCards.Clear();
+            communityCards.Add(API.DrawTopCard());
+            communityCards.Add(API.DrawTopCard());
+            communityCards.Add(API.DrawTopCard());
 
             tableState = 3;
 
@@ -62,13 +62,13 @@ namespace Windows_App_Holdem
         {
             if (tableState == 3)
             {
-                table.Add(API.DrawTopCard());
+                communityCards.Add(API.DrawTopCard());
                 tableState++;
                 DisplayCards();
             }
             else if (tableState == 4)
             {
-                table.Add(API.DrawTopCard());
+                communityCards.Add(API.DrawTopCard());
                 tableState++;
                 buttonNextCard.Enabled = false;
                 DisplayCards();
@@ -91,32 +91,32 @@ namespace Windows_App_Holdem
 
             //Table Cards
 
-            TableCardOneNumber.Text = table[0].Number.ToString();
-            TableCardOneColour.Text = table[0].Colour.ToString();
+            TableCardOneNumber.Text = communityCards[0].Number.ToString();
+            TableCardOneColour.Text = communityCards[0].Colour.ToString();
 
-            TableCardTwoNumber.Text = table[1].Number.ToString();
-            TableCardTwoColour.Text = table[1].Colour.ToString();
+            TableCardTwoNumber.Text = communityCards[1].Number.ToString();
+            TableCardTwoColour.Text = communityCards[1].Colour.ToString();
 
-            TableCardThreeNumber.Text = table[2].Number.ToString();
-            TableCardThreeColour.Text = table[2].Colour.ToString();
+            TableCardThreeNumber.Text = communityCards[2].Number.ToString();
+            TableCardThreeColour.Text = communityCards[2].Colour.ToString();
 
             if (tableState == 4)
             {
-                TableCardFourNumber.Text = table[3].Number.ToString();
-                TableCardFourColour.Text = table[3].Colour.ToString();
+                TableCardFourNumber.Text = communityCards[3].Number.ToString();
+                TableCardFourColour.Text = communityCards[3].Colour.ToString();
             }
             if (tableState == 5)
             {
-                TableCardFourNumber.Text = table[3].Number.ToString();
-                TableCardFourColour.Text = table[3].Colour.ToString();
+                TableCardFourNumber.Text = communityCards[3].Number.ToString();
+                TableCardFourColour.Text = communityCards[3].Colour.ToString();
 
-                TableCardFiveNumber.Text = table[4].Number.ToString();
-                TableCardFiveColour.Text = table[4].Colour.ToString();
+                TableCardFiveNumber.Text = communityCards[4].Number.ToString();
+                TableCardFiveColour.Text = communityCards[4].Colour.ToString();
             }
 
             //Create Best Possible Hand
             bestPossibleHand.Clear();
-            List<Card> cardsToTest = yourHand.Concat(table).ToList();
+            List<Card> cardsToTest = yourHand.Concat(communityCards).ToList();
 
             foreach (Card card in API.GetBestPossibleHand(cardsToTest))
             {
