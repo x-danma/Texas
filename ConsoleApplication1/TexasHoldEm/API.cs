@@ -21,6 +21,14 @@ namespace TexasHoldEm
             return returnList;
         }
 
+        public static List<Card> GetBestPossibleHand(List<Card> incomingCards)
+        {
+            
+            List<Card> returningList = GameDealer.GetBestPossibleHand(incomingCards.ToList());
+            return returningList;
+            
+        }
+
         public static Card DrawTopCard()
         {
            return GameDealer.DrawTopCard();

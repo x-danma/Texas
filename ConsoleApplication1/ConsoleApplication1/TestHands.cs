@@ -206,6 +206,18 @@ namespace TexasHoldEm
                                                               new Card(6, "Hearts"),
                                                               new Card(8, "Clovers")}, "Nothing", 17, new List<Card>()));
 
+            HandsToTest.Add(new TestHandUnit(new List<Card> { new Card(8, "Spades"), //Yes
+                                                              new Card(2, "Clovers"),
+                                                              new Card(12, "Diamonds"),
+                                                              new Card(6, "Clovers"),
+                                                              new Card(5, "Hearts"),
+                                                              new Card(11, "Hearts"),
+                                                              new Card(8, "Clovers")}, "Pair", 18, new List<Card> {new Card(8, "Spades"),
+                                                                                                                        new Card(8, "Clovers"),
+                                                                                                                        new Card(12, "Diamonds"),
+                                                                                                                        new Card(11, "Hearts"),
+                                                                                                                        new Card(6, "Clovers") }));
+
             return HandsToTest;
         }
         

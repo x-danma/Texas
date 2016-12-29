@@ -15,6 +15,7 @@ namespace Windows_App_Holdem
     {
         List<Card> yourHand = new List<Card>();
         List<Card> table = new List<Card>();
+        List<Card> bestPossibleHand = new List<Card>();
         /// <summary>
         /// The number of dealer cards on the joint table
         /// </summary>
@@ -112,6 +113,32 @@ namespace Windows_App_Holdem
                 TableCardFiveNumber.Text = table[4].Number.ToString();
                 TableCardFiveColour.Text = table[4].Color;
             }
+
+            //Create Best Possible Hand
+            bestPossibleHand.Clear();
+            List<Card> cardsToTest = yourHand.Concat(table).ToList();
+
+            foreach (Card card in API.GetBestPossibleHand(cardsToTest))
+            {
+                bestPossibleHand.Add(card);
+            }
+
+
+            //Display Best Possible Hand
+            BestHandCardOneNumber.Text = bestPossibleHand[0].Number.ToString();
+            BestHandCardOneColour.Text = bestPossibleHand[0].Color;
+
+            BestHandCardTwoNumber.Text = bestPossibleHand[1].Number.ToString();
+            BestHandCardTwoColour.Text = bestPossibleHand[1].Color;
+
+            BestHandCardThreeNumber.Text = bestPossibleHand[2].Number.ToString();
+            BestHandCardThreeColour.Text = bestPossibleHand[2].Color;
+
+            BestHandCardFourNumber.Text = bestPossibleHand[3].Number.ToString();
+            BestHandCardFourColour.Text = bestPossibleHand[3].Color;
+
+            BestHandCardFiveNumber.Text = bestPossibleHand[4].Number.ToString();
+            BestHandCardFiveColour.Text = bestPossibleHand[4].Color;
         }
 
         private void DisplayBlankCards()

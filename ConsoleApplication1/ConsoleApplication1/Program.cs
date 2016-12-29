@@ -35,6 +35,7 @@ namespace TexasHoldEm
                     {
                         if (testHandUnit.CorrectName == texasAsserter.Name && TestCorrectHandOutput(best5CardHand, testHandUnit))
                         {
+                            Console.WriteLine($"Test number {testHandUnit.TestNumber} OK");
                             texasHandFound = true;
                             break;
                         }
@@ -54,7 +55,7 @@ namespace TexasHoldEm
                 {
                     if (testHandUnit.CorrectName == "Nothing")
                     {
-
+                        Console.WriteLine($"Test number {testHandUnit.TestNumber} OK");
                     }
                     else
                     {

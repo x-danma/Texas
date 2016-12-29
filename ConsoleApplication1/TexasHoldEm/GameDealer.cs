@@ -44,18 +44,32 @@ namespace TexasHoldEm
             return shuffledDeck;
         }
 
+        internal static List<Card> GetBestPossibleHand(List<Card> incomingCards)
+        {
+            foreach (TexasHandAsserter texasHandAsserter in API.GetPossibleWinningHands())
+            {
+                List<Card> best5CardHand = texasHandAsserter.ReturnBestHand(incomingCards.ToList());
+                if (best5CardHand.Count == 5)
+                {
+                    return best5CardHand;
+                }
+            }
+            return incomingCards.OrderByDescending(x => x.Number).ToList();
+
+        }
+
         private static List<Card> shuffleDeck(List<Card> newDeck)
         {
             Random rand = new Random();
             List<Card> shuffledDeck = new List<Card>();
-            
+
 
             while (newDeck.Count > 0)
             {
                 int randomIndex = rand.Next() % newDeck.Count;
                 shuffledDeck.Add(newDeck[randomIndex]);
                 newDeck.RemoveAt(randomIndex);
-                
+
             }
             return shuffledDeck;
         }
