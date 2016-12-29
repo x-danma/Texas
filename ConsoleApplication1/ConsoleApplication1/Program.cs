@@ -88,9 +88,9 @@ namespace TexasHoldEm
         {
             for (int i = 2; i < 14; i++)
             {
-                foreach (string Colour in new List<string> { "Spades", "Hearts", "Diamonds", "Clovers" })
+                foreach (Card.CardColour colour in Enum.GetValues(typeof(Card.CardColour)))
                 {
-                    Deck.Add(new Card(i, Colour));
+                    Deck.Add(new Card(i, colour));
                 }
             }
         }

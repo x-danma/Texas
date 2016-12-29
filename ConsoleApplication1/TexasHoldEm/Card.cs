@@ -16,36 +16,16 @@ namespace TexasHoldEm
         {
             Hearts, Spades, Diamonds, Clovers
         }
-        public Card(int number, string colour)
+        public Card(int number, CardColour colour)
         {
             this.Number = number;
-            if (number == 14)
+            if (number == 14)           
                 this.AlternativeNumber = 1;
             else
                 this.AlternativeNumber = number;
-
-            if (colour == "Hearts")
-            {
-                this.Colour = CardColour.Hearts;
-            }
-            else if (colour == "Spades")
-            {
-                this.Colour = CardColour.Spades;
-            }
-            else if (colour == "Diamonds")
-            {
-                this.Colour = CardColour.Diamonds;
-            }
-            else if (colour == "Clovers")
-            {
-                this.Colour = CardColour.Clovers;
-            }
-            else
-            {
-                throw new Exception("Not a valid Colour for a Card");
-            }
-            
+            this.Colour = colour;
         }
+        
         public override string ToString()
         {
             return $"{this.Number} {this.Colour} ";

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TexasHoldEm", "TexasHoldEm\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows App Holdem", "Windows App Holdem\Windows App Holdem.csproj", "{466DEFB1-9644-4AC2-8B57-E7934BD864E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web API Service", "Web API Service\Web API Service.csproj", "{BC8A3AD0-1452-4E0B-8E56-B00D12C3B743}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Texas Web API Service", "Web API Service\Texas Web API Service.csproj", "{BC8A3AD0-1452-4E0B-8E56-B00D12C3B743}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

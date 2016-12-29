@@ -31,9 +31,9 @@ namespace TexasHoldEm
             List<Card> newDeck = new List<Card>();
             for (int i = 2; i < 14; i++)
             {
-                foreach (string color in new List<string> { "Spades", "Hearts", "Diamonds", "Clovers" })
+                foreach (Card.CardColour colour in Enum.GetValues(typeof(Card.CardColour)))
                 {
-                    newDeck.Add(new Card(i, color));
+                    newDeck.Add(new Card(i, colour));
                 }
             }
 
