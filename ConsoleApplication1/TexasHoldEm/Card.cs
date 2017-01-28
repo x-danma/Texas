@@ -16,6 +16,11 @@ namespace TexasHoldEm
         {
             Hearts, Spades, Diamonds, Clovers
         }
+        
+        public Card()
+        {
+
+        }
         public Card(int number, CardColour colour)
         {
             this.Number = number;

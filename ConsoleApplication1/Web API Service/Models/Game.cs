@@ -11,6 +11,8 @@ namespace Web_API_Service.Models
 
         public Deck Deck { get; set; }
 
+        public List<Card> CommunityCards { get; set; }
+
 
     }
 }

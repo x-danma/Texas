@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,6 +85,10 @@
     <ProjectReference Include="..\TexasHoldEm\TexasHoldEm.csproj">
       <Project>{9dbe823b-b754-423d-b806-c1d7238db884}</Project>
       <Name>TexasHoldEm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web API Service\Texas Web API Service.csproj">
+      <Project>{bc8a3ad0-1452-4e0b-8e56-b00d12c3b743}</Project>
+      <Name>Texas Web API Service</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

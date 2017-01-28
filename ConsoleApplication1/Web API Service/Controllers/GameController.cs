@@ -11,13 +11,13 @@ namespace Web_API_Service.Controllers
     [RoutePrefix("api/Game")]
     public class GameController : ApiController
     {
-        // GET api/game
+        // GET api/Game
         public IEnumerable<string> Get()
         {
             return new string[] { "Hello", "There" };
         }
 
-        // GET api/game
+        // GET api/Game/Player/Hand
         [Route("Player/Hand")]
         public IEnumerable<Card> GetMyCurrentHand(int PlayerId)
         {
@@ -25,7 +25,7 @@ namespace Web_API_Service.Controllers
         }
 
         [Route("CommunityCards")]
-        //GET api/game/CommunityCards
+        //GET api/Game/CommunityCards
         public IEnumerable<Card> GetCommunityCards(int GameId)
         {
             return new List<Card> { new Card(8, Card.CardColour.Clovers), new Card(6, Card.CardColour.Diamonds), new Card(11, Card.CardColour.Spades)};

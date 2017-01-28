@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TexasHoldEm;
+using System.Net.Http;
+using System.Web.Script.Serialization;
+
 
 namespace Windows_App_Holdem
 {
+
     public partial class TexasHoldemApp : Form
     {
+        static HttpClient proxy = new HttpClient();
+
         List<Card> yourHand = new List<Card>();
         List<Card> communityCards = new List<Card>();
         List<Card> bestPossibleHand = new List<Card>();
@@ -40,35 +46,74 @@ namespace Windows_App_Holdem
 
         private void buttonStartNewGame_Click(object sender, EventArgs e)
         {
-            API.StartNewGame();
+            //API.StartNewGame();
 
             yourHand.Clear();
-            yourHand.Add(API.DrawTopCard());
-            yourHand.Add(API.DrawTopCard());
 
-            communityCards.Clear();
-            communityCards.Add(API.DrawTopCard());
-            communityCards.Add(API.DrawTopCard());
-            communityCards.Add(API.DrawTopCard());
 
-            tableState = 3;
+            GetStartingHand();
+            textBoxInfoBox.Text = "Waiting...";
 
-            DisplayCards();
+            //RunAsync().Wait();
+            //yourHand.Add(API.DrawTopCard());
+            //yourHand.Add(API.DrawTopCard());
+
+            //communityCards.Clear();
+            //communityCards.Add(API.DrawTopCard());
+            //communityCards.Add(API.DrawTopCard());
+            //communityCards.Add(API.DrawTopCard());
+
 
             buttonNextCard.Enabled = true;
         }
+
+        private async void GetStartingHand()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:14220/");
+                HttpResponseMessage response = await client.GetAsync("api/Game/Player/Hand?PlayerId=1");
+                if (response.IsSuccessStatusCode)
+                {
+                    string myCards = await response.Content.ReadAsStringAsync();
+
+                    JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+                    List<Card> myCardList = javaScriptSerializer.Deserialize<List<Card>>(myCards);
+
+                    foreach (Card card in myCardList)
+                    {
+                        yourHand.Add(card);
+                    }
+
+                    communityCards.Add(myCardList[0]);
+                    communityCards.Add(myCardList[0]);
+                    communityCards.Add(myCardList[0]);
+
+                }
+
+            }
+            tableState = 3;
+            DisplayCards();
+            textBoxInfoBox.Text = "";
+        }
+
+
+
+
+
+
 
         private void buttonNextCard_Click(object sender, EventArgs e)
         {
             if (tableState == 3)
             {
-                communityCards.Add(API.DrawTopCard());
+                //communityCards.Add(API.DrawTopCard());
                 tableState++;
                 DisplayCards();
             }
             else if (tableState == 4)
             {
-                communityCards.Add(API.DrawTopCard());
+                //communityCards.Add(API.DrawTopCard());
                 tableState++;
                 buttonNextCard.Enabled = false;
                 DisplayCards();

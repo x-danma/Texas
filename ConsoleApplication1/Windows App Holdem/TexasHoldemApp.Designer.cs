@@ -40,8 +40,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonNextCard = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.TableCardFiveColour = new System.Windows.Forms.TextBox();
-            this.TableCardFiveNumber = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.TableCardTwoNumber = new System.Windows.Forms.TextBox();
@@ -52,6 +50,9 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.TableCardFourNumber = new System.Windows.Forms.TextBox();
             this.TableCardFourColour = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.TableCardFiveColour = new System.Windows.Forms.TextBox();
+            this.TableCardFiveNumber = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBoxBestPossibleHand = new System.Windows.Forms.GroupBox();
             this.BestHandCardFiveColour = new System.Windows.Forms.TextBox();
@@ -69,16 +70,16 @@
             this.BestHandCardTwoNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.BestHandCardOneNumber = new System.Windows.Forms.TextBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.textBoxInfoBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBoxBestPossibleHand.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // lableCardOne
@@ -196,22 +197,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Table";
             // 
-            // TableCardFiveColour
-            // 
-            this.TableCardFiveColour.Location = new System.Drawing.Point(6, 53);
-            this.TableCardFiveColour.Name = "TableCardFiveColour";
-            this.TableCardFiveColour.ReadOnly = true;
-            this.TableCardFiveColour.Size = new System.Drawing.Size(80, 20);
-            this.TableCardFiveColour.TabIndex = 21;
-            // 
-            // TableCardFiveNumber
-            // 
-            this.TableCardFiveNumber.Location = new System.Drawing.Point(6, 27);
-            this.TableCardFiveNumber.Name = "TableCardFiveNumber";
-            this.TableCardFiveNumber.ReadOnly = true;
-            this.TableCardFiveNumber.Size = new System.Drawing.Size(80, 20);
-            this.TableCardFiveNumber.TabIndex = 20;
-            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -307,6 +292,34 @@
             this.TableCardFourColour.ReadOnly = true;
             this.TableCardFourColour.Size = new System.Drawing.Size(80, 20);
             this.TableCardFourColour.TabIndex = 18;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox8.Controls.Add(this.TableCardFiveColour);
+            this.groupBox8.Controls.Add(this.TableCardFiveNumber);
+            this.groupBox8.Location = new System.Drawing.Point(466, 36);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(109, 102);
+            this.groupBox8.TabIndex = 26;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "4";
+            // 
+            // TableCardFiveColour
+            // 
+            this.TableCardFiveColour.Location = new System.Drawing.Point(6, 53);
+            this.TableCardFiveColour.Name = "TableCardFiveColour";
+            this.TableCardFiveColour.ReadOnly = true;
+            this.TableCardFiveColour.Size = new System.Drawing.Size(80, 20);
+            this.TableCardFiveColour.TabIndex = 21;
+            // 
+            // TableCardFiveNumber
+            // 
+            this.TableCardFiveNumber.Location = new System.Drawing.Point(6, 27);
+            this.TableCardFiveNumber.Name = "TableCardFiveNumber";
+            this.TableCardFiveNumber.ReadOnly = true;
+            this.TableCardFiveNumber.Size = new System.Drawing.Size(80, 20);
+            this.TableCardFiveNumber.TabIndex = 20;
             // 
             // groupBox3
             // 
@@ -474,28 +487,24 @@
             this.BestHandCardOneNumber.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardOneNumber.TabIndex = 23;
             // 
-            // groupBox8
+            // textBoxInfoBox
             // 
-            this.groupBox8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.groupBox8.Controls.Add(this.TableCardFiveColour);
-            this.groupBox8.Controls.Add(this.TableCardFiveNumber);
-            this.groupBox8.Location = new System.Drawing.Point(466, 36);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(109, 102);
-            this.groupBox8.TabIndex = 26;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "4";
+            this.textBoxInfoBox.Location = new System.Drawing.Point(482, 238);
+            this.textBoxInfoBox.Name = "textBoxInfoBox";
+            this.textBoxInfoBox.Size = new System.Drawing.Size(310, 20);
+            this.textBoxInfoBox.TabIndex = 14;
             // 
-            // Form1
+            // TexasHoldemApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1368, 593);
+            this.Controls.Add(this.textBoxInfoBox);
             this.Controls.Add(this.groupBoxBestPossibleHand);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
-            this.Name = "Form1";
+            this.Name = "TexasHoldemApp";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -508,13 +517,14 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBoxBestPossibleHand.ResumeLayout(false);
             this.groupBoxBestPossibleHand.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -562,6 +572,7 @@
         private System.Windows.Forms.TextBox TableCardThreeNumber;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox textBoxInfoBox;
     }
 }
 
