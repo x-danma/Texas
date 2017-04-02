@@ -19,6 +19,10 @@ namespace Windows_App_Holdem
     {
         static HttpClient proxy = new HttpClient();
 
+        Guid myPlayerID = Guid.NewGuid();
+        Guid myGameID;
+        JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+        Uri serverUri = new Uri("http://localhost:14220/");
         List<Card> yourHand = new List<Card>();
         List<Card> communityCards = new List<Card>();
         List<Card> bestPossibleHand = new List<Card>();
@@ -50,8 +54,10 @@ namespace Windows_App_Holdem
 
             yourHand.Clear();
 
+            StartNewGame();
 
             GetStartingHand();
+            //GetStartingHand();
             textBoxInfoBox.Text = "Waiting...";
 
             //RunAsync().Wait();
@@ -67,17 +73,44 @@ namespace Windows_App_Holdem
             buttonNextCard.Enabled = true;
         }
 
+        private async void StartNewGame()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = serverUri;
+                HttpResponseMessage response = await client.PostAsync($"api/Game/StartNewGame?playerID={myPlayerID}", new StringContent(myPlayerID.ToString()));
+                if (response.IsSuccessStatusCode)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+                    string contentString = javaScriptSerializer.Deserialize<string>(content);
+                    if (Guid.TryParse(contentString, out myGameID))
+                    {
+                        
+                        
+                        textBoxInfoBox.Text = "";
+
+                    }
+
+                }
+                else
+                {
+                    textBoxInfoBox.Text = "Error while connecting to the server. Please try again Later";
+                }
+
+            }
+        }
+
         private async void GetStartingHand()
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:14220/");
+                client.BaseAddress = serverUri;
                 HttpResponseMessage response = await client.GetAsync("api/Game/Player/Hand?PlayerId=1");
                 if (response.IsSuccessStatusCode)
                 {
                     string myCards = await response.Content.ReadAsStringAsync();
 
-                    JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+
                     List<Card> myCardList = javaScriptSerializer.Deserialize<List<Card>>(myCards);
 
                     foreach (Card card in myCardList)
@@ -89,12 +122,16 @@ namespace Windows_App_Holdem
                     communityCards.Add(myCardList[0]);
                     communityCards.Add(myCardList[0]);
 
+                    tableState = 3;
+                    DisplayCards();
+                    textBoxInfoBox.Text = "";
+                }
+                else
+                {
+                    textBoxInfoBox.Text = "Error while connecting to the server.Please try again Later";
                 }
 
             }
-            tableState = 3;
-            DisplayCards();
-            textBoxInfoBox.Text = "";
         }
 
 

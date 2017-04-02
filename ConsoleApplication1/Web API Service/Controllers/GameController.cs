@@ -30,5 +30,14 @@ namespace Web_API_Service.Controllers
         {
             return new List<Card> { new Card(8, Card.CardColour.Clovers), new Card(6, Card.CardColour.Diamonds), new Card(11, Card.CardColour.Spades)};
         }
+
+        [Route("StartNewGame")]
+        //POST api/Game/StartNewGame
+        public Guid GameID(Guid playerID)
+        {
+            Guid newgameID = Guid.NewGuid();
+            Console.WriteLine($"Starting new game with \n PlayerID \t {playerID}. \n Returning \n GameID \t {newgameID}");
+            return newgameID;
+        }
     }
 }
