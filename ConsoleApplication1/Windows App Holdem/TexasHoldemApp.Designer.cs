@@ -34,10 +34,12 @@
             this.handCardOneNumber = new System.Windows.Forms.TextBox();
             this.handCardOneColour = new System.Windows.Forms.TextBox();
             this.handCardTwoColour = new System.Windows.Forms.TextBox();
-            this.buttonStartNewGame = new System.Windows.Forms.Button();
+            this.buttonPlayerReady = new System.Windows.Forms.Button();
             this.TableCardOneColour = new System.Windows.Forms.TextBox();
             this.TableCardOneNumber = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonStartNewGame = new System.Windows.Forms.Button();
+            this.buttonJoinGame = new System.Windows.Forms.Button();
             this.buttonNextCard = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -70,7 +72,12 @@
             this.BestHandCardTwoNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.BestHandCardOneNumber = new System.Windows.Forms.TextBox();
-            this.textBoxInfoBox = new System.Windows.Forms.TextBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.listBoxPlayers = new System.Windows.Forms.ListBox();
+            this.labelPlayers = new System.Windows.Forms.Label();
+            this.labelGameID = new System.Windows.Forms.Label();
+            this.textBoxGameID = new System.Windows.Forms.TextBox();
+            this.labelInfoText = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -80,6 +87,7 @@
             this.groupBox8.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBoxBestPossibleHand.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // lableCardOne
@@ -134,15 +142,16 @@
             this.handCardTwoColour.Size = new System.Drawing.Size(162, 20);
             this.handCardTwoColour.TabIndex = 5;
             // 
-            // buttonStartNewGame
+            // buttonPlayerReady
             // 
-            this.buttonStartNewGame.Location = new System.Drawing.Point(6, 229);
-            this.buttonStartNewGame.Name = "buttonStartNewGame";
-            this.buttonStartNewGame.Size = new System.Drawing.Size(98, 31);
-            this.buttonStartNewGame.TabIndex = 6;
-            this.buttonStartNewGame.Text = "Start New Game";
-            this.buttonStartNewGame.UseVisualStyleBackColor = true;
-            this.buttonStartNewGame.Click += new System.EventHandler(this.buttonStartNewGame_Click);
+            this.buttonPlayerReady.Enabled = false;
+            this.buttonPlayerReady.Location = new System.Drawing.Point(6, 19);
+            this.buttonPlayerReady.Name = "buttonPlayerReady";
+            this.buttonPlayerReady.Size = new System.Drawing.Size(98, 31);
+            this.buttonPlayerReady.TabIndex = 6;
+            this.buttonPlayerReady.Text = "I am Ready!";
+            this.buttonPlayerReady.UseVisualStyleBackColor = true;
+            this.buttonPlayerReady.Click += new System.EventHandler(this.buttonPlayerReady_Click);
             // 
             // TableCardOneColour
             // 
@@ -163,18 +172,41 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.groupBox1.Controls.Add(this.buttonNextCard);
             this.groupBox1.Controls.Add(this.buttonStartNewGame);
-            this.groupBox1.Location = new System.Drawing.Point(24, 163);
+            this.groupBox1.Controls.Add(this.buttonJoinGame);
+            this.groupBox1.Controls.Add(this.buttonNextCard);
+            this.groupBox1.Controls.Add(this.buttonPlayerReady);
+            this.groupBox1.Location = new System.Drawing.Point(38, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 277);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Game Menu";
             // 
+            // buttonStartNewGame
+            // 
+            this.buttonStartNewGame.Location = new System.Drawing.Point(6, 189);
+            this.buttonStartNewGame.Name = "buttonStartNewGame";
+            this.buttonStartNewGame.Size = new System.Drawing.Size(98, 31);
+            this.buttonStartNewGame.TabIndex = 9;
+            this.buttonStartNewGame.Text = "Start New Game";
+            this.buttonStartNewGame.UseVisualStyleBackColor = true;
+            this.buttonStartNewGame.Click += new System.EventHandler(this.buttonStartNewGame_Click);
+            // 
+            // buttonJoinGame
+            // 
+            this.buttonJoinGame.Location = new System.Drawing.Point(6, 229);
+            this.buttonJoinGame.Name = "buttonJoinGame";
+            this.buttonJoinGame.Size = new System.Drawing.Size(98, 31);
+            this.buttonJoinGame.TabIndex = 8;
+            this.buttonJoinGame.Text = "Join Game";
+            this.buttonJoinGame.UseVisualStyleBackColor = true;
+            this.buttonJoinGame.Click += new System.EventHandler(this.buttonJoinGame_Click);
+            // 
             // buttonNextCard
             // 
-            this.buttonNextCard.Location = new System.Drawing.Point(58, 44);
+            this.buttonNextCard.Enabled = false;
+            this.buttonNextCard.Location = new System.Drawing.Point(58, 56);
             this.buttonNextCard.Name = "buttonNextCard";
             this.buttonNextCard.Size = new System.Drawing.Size(75, 23);
             this.buttonNextCard.TabIndex = 7;
@@ -330,7 +362,7 @@
             this.groupBox3.Controls.Add(this.labelCardTwo);
             this.groupBox3.Controls.Add(this.handCardOneNumber);
             this.groupBox3.Controls.Add(this.handCardTwoNumber);
-            this.groupBox3.Location = new System.Drawing.Point(420, 329);
+            this.groupBox3.Location = new System.Drawing.Point(407, 340);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(500, 159);
             this.groupBox3.TabIndex = 12;
@@ -487,26 +519,76 @@
             this.BestHandCardOneNumber.Size = new System.Drawing.Size(80, 20);
             this.BestHandCardOneNumber.TabIndex = 23;
             // 
-            // textBoxInfoBox
+            // groupBox9
             // 
-            this.textBoxInfoBox.Location = new System.Drawing.Point(482, 238);
-            this.textBoxInfoBox.Name = "textBoxInfoBox";
-            this.textBoxInfoBox.Size = new System.Drawing.Size(310, 20);
-            this.textBoxInfoBox.TabIndex = 14;
+            this.groupBox9.Controls.Add(this.listBoxPlayers);
+            this.groupBox9.Controls.Add(this.labelPlayers);
+            this.groupBox9.Controls.Add(this.labelGameID);
+            this.groupBox9.Controls.Add(this.textBoxGameID);
+            this.groupBox9.Location = new System.Drawing.Point(38, 355);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(356, 206);
+            this.groupBox9.TabIndex = 15;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "INFO";
+            // 
+            // listBoxPlayers
+            // 
+            this.listBoxPlayers.FormattingEnabled = true;
+            this.listBoxPlayers.Location = new System.Drawing.Point(81, 75);
+            this.listBoxPlayers.Name = "listBoxPlayers";
+            this.listBoxPlayers.Size = new System.Drawing.Size(252, 56);
+            this.listBoxPlayers.TabIndex = 18;
+            // 
+            // labelPlayers
+            // 
+            this.labelPlayers.AutoSize = true;
+            this.labelPlayers.Location = new System.Drawing.Point(32, 75);
+            this.labelPlayers.Name = "labelPlayers";
+            this.labelPlayers.Size = new System.Drawing.Size(41, 13);
+            this.labelPlayers.TabIndex = 17;
+            this.labelPlayers.Text = "Players";
+            // 
+            // labelGameID
+            // 
+            this.labelGameID.AutoSize = true;
+            this.labelGameID.Location = new System.Drawing.Point(29, 46);
+            this.labelGameID.Name = "labelGameID";
+            this.labelGameID.Size = new System.Drawing.Size(46, 13);
+            this.labelGameID.TabIndex = 16;
+            this.labelGameID.Text = "GameID";
+            // 
+            // textBoxGameID
+            // 
+            this.textBoxGameID.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.textBoxGameID.Location = new System.Drawing.Point(81, 40);
+            this.textBoxGameID.Name = "textBoxGameID";
+            this.textBoxGameID.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxGameID.Size = new System.Drawing.Size(252, 20);
+            this.textBoxGameID.TabIndex = 15;
+            // 
+            // labelInfoText
+            // 
+            this.labelInfoText.AutoSize = true;
+            this.labelInfoText.Location = new System.Drawing.Point(594, 257);
+            this.labelInfoText.Name = "labelInfoText";
+            this.labelInfoText.Size = new System.Drawing.Size(32, 13);
+            this.labelInfoText.TabIndex = 16;
+            this.labelInfoText.Text = "INFO";
             // 
             // TexasHoldemApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1368, 593);
-            this.Controls.Add(this.textBoxInfoBox);
+            this.Controls.Add(this.labelInfoText);
+            this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBoxBestPossibleHand);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Name = "TexasHoldemApp";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -523,6 +605,8 @@
             this.groupBox3.PerformLayout();
             this.groupBoxBestPossibleHand.ResumeLayout(false);
             this.groupBoxBestPossibleHand.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,7 +620,7 @@
         private System.Windows.Forms.TextBox handCardOneNumber;
         private System.Windows.Forms.TextBox handCardOneColour;
         private System.Windows.Forms.TextBox handCardTwoColour;
-        private System.Windows.Forms.Button buttonStartNewGame;
+        private System.Windows.Forms.Button buttonPlayerReady;
         private System.Windows.Forms.TextBox TableCardOneColour;
         private System.Windows.Forms.TextBox TableCardOneNumber;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -572,7 +656,14 @@
         private System.Windows.Forms.TextBox TableCardThreeNumber;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox textBoxInfoBox;
+        private System.Windows.Forms.Button buttonJoinGame;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox textBoxGameID;
+        private System.Windows.Forms.ListBox listBoxPlayers;
+        private System.Windows.Forms.Label labelPlayers;
+        private System.Windows.Forms.Label labelGameID;
+        private System.Windows.Forms.Label labelInfoText;
+        private System.Windows.Forms.Button buttonStartNewGame;
     }
 }
 

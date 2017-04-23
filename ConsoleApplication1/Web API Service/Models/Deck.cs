@@ -16,6 +16,7 @@ namespace Web_API_Service.Models
         /// </summary>
         public Deck()
         {
+            UsedCards = new List<Models.Card>();
             List<Card> tempDeck = new List<Card>();
             FillDeck(tempDeck);
 
@@ -53,6 +54,12 @@ namespace Web_API_Service.Models
                 }
             }
         }
-
+        public Card DrawTopCard()
+        {
+            Card returnCard = Cards[0];
+            UsedCards.Add(Cards[0]);
+            Cards.RemoveAt(0);
+            return returnCard;
+        }
     }
 }

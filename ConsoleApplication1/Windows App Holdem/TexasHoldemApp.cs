@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using TexasHoldEm;
 using System.Net.Http;
 using System.Web.Script.Serialization;
-
+using TexasHoldEm.Core;
 
 namespace Windows_App_Holdem
 {
@@ -30,48 +30,54 @@ namespace Windows_App_Holdem
         /// The number of dealer cards on the joint table
         /// </summary>
         public int tableState { get; set; }
-
         public TexasHoldemApp()
         {
             InitializeComponent();
         }
 
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+        #region Events
 
         private void buttonStartNewGame_Click(object sender, EventArgs e)
         {
-            //API.StartNewGame();
-
             yourHand.Clear();
-
             StartNewGame();
+            labelInfoText.Text = "Starting new game, please wait...";
+            buttonNextCard.Enabled = true;
 
-            GetStartingHand();
-            //GetStartingHand();
-            textBoxInfoBox.Text = "Waiting...";
-
-            //RunAsync().Wait();
-            //yourHand.Add(API.DrawTopCard());
-            //yourHand.Add(API.DrawTopCard());
-
-            //communityCards.Clear();
-            //communityCards.Add(API.DrawTopCard());
-            //communityCards.Add(API.DrawTopCard());
-            //communityCards.Add(API.DrawTopCard());
-
-
+        }
+        private void buttonJoinGame_Click(object sender, EventArgs e)
+        {
+            yourHand.Clear();
+            JoinGame();
+            labelInfoText.Text = "Joining game, please wait...";
             buttonNextCard.Enabled = true;
         }
+        private void buttonPlayerReady_Click(object sender, EventArgs e)
+        {
+            GetStartingHand();
+            labelInfoText.Text = "Waiting...";
+        }
+        private void buttonNextCard_Click(object sender, EventArgs e)
+        {
+            if (tableState == 3)
+            {
+                //communityCards.Add(API.DrawTopCard());
+                tableState++;
+                DisplayCards();
+            }
+            else if (tableState == 4)
+            {
+                //communityCards.Add(API.DrawTopCard());
+                tableState++;
+                buttonNextCard.Enabled = false;
+                buttonStartNewGame.Enabled = true;
+                DisplayCards();
+            }
+        }
+
+        #endregion
+
+        #region Async Methods
 
         private async void StartNewGame()
         {
@@ -79,33 +85,30 @@ namespace Windows_App_Holdem
             {
                 client.BaseAddress = serverUri;
                 HttpResponseMessage response = await client.PostAsync($"api/Game/StartNewGame?playerID={myPlayerID}", new StringContent(myPlayerID.ToString()));
+
                 if (response.IsSuccessStatusCode)
                 {
                     string content = await response.Content.ReadAsStringAsync();
                     string contentString = javaScriptSerializer.Deserialize<string>(content);
                     if (Guid.TryParse(contentString, out myGameID))
                     {
-                        
-                        
-                        textBoxInfoBox.Text = "";
-
+                        labelInfoText.Text = "Created new Game!";
+                        textBoxGameID.Text = $"{myGameID}";
+                        listBoxPlayers.Items.Add("You");
+                        buttonStartNewGame.Enabled = false;
+                        buttonPlayerReady.Enabled = true;
                     }
-
                 }
                 else
-                {
-                    textBoxInfoBox.Text = "Error while connecting to the server. Please try again Later";
-                }
-
+                    labelInfoText.Text = "Error while connecting to the server. Please try again Later";
             }
         }
-
         private async void GetStartingHand()
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = serverUri;
-                HttpResponseMessage response = await client.GetAsync("api/Game/Player/Hand?PlayerId=1");
+                HttpResponseMessage response = await client.GetAsync($"api/Game/Player/Hand?PlayerId={myPlayerID}&GameID={myGameID}");
                 if (response.IsSuccessStatusCode)
                 {
                     string myCards = await response.Content.ReadAsStringAsync();
@@ -124,40 +127,21 @@ namespace Windows_App_Holdem
 
                     tableState = 3;
                     DisplayCards();
-                    textBoxInfoBox.Text = "";
+                    labelInfoText.Text = "keep playing :)";
                 }
                 else
-                {
-                    textBoxInfoBox.Text = "Error while connecting to the server.Please try again Later";
-                }
-
+                    labelInfoText.Text = "Error while connecting to the server.Please try again Later";
             }
         }
 
-
-
-
-
-
-
-        private void buttonNextCard_Click(object sender, EventArgs e)
+        private void JoinGame()
         {
-            if (tableState == 3)
-            {
-                //communityCards.Add(API.DrawTopCard());
-                tableState++;
-                DisplayCards();
-            }
-            else if (tableState == 4)
-            {
-                //communityCards.Add(API.DrawTopCard());
-                tableState++;
-                buttonNextCard.Enabled = false;
-                DisplayCards();
-            }
-
-
+            //TODO new await call to get players in the current game
         }
+
+        #endregion
+
+        #region GUI methods
 
         private void DisplayCards()
         {
@@ -222,7 +206,6 @@ namespace Windows_App_Holdem
             BestHandCardFiveNumber.Text = bestPossibleHand[4].Number.ToString();
             BestHandCardFiveColour.Text = bestPossibleHand[4].Colour.ToString();
         }
-
         private void DisplayBlankCards()
         {
             //Your Hand Cards
@@ -251,6 +234,8 @@ namespace Windows_App_Holdem
             TableCardFiveNumber.Text = "";
             TableCardFiveColour.Text = "";
         }
+
+        #endregion
 
     }
 }

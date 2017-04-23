@@ -52,9 +52,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TexasHoldEm\TexasHoldEm.csproj">
+    <ProjectReference Include="..\TexasHoldEm\TexasHoldEmCore.csproj">
       <Project>{9dbe823b-b754-423d-b806-c1d7238db884}</Project>
-      <Name>TexasHoldEm</Name>
+      <Name>TexasHoldEmCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

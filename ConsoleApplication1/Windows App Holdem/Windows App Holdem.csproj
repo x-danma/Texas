@@ -82,9 +82,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TexasHoldEm\TexasHoldEm.csproj">
+    <ProjectReference Include="..\TexasHoldEm\TexasHoldEmCore.csproj">
       <Project>{9dbe823b-b754-423d-b806-c1d7238db884}</Project>
-      <Name>TexasHoldEm</Name>
+      <Name>TexasHoldEmCore</Name>
     </ProjectReference>
     <ProjectReference Include="..\Web API Service\Texas Web API Service.csproj">
       <Project>{bc8a3ad0-1452-4e0b-8e56-b00d12c3b743}</Project>

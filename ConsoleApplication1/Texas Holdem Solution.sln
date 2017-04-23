@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "ConsoleApplication1\TestApp.csproj", "{AD40D5D5-92D0-4F8C-9EAE-A4EB9B1866B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TexasHoldEm", "TexasHoldEm\TexasHoldEm.csproj", "{9DBE823B-B754-423D-B806-C1D7238DB884}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TexasHoldEmCore", "TexasHoldEm\TexasHoldEmCore.csproj", "{9DBE823B-B754-423D-B806-C1D7238DB884}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows App Holdem", "Windows App Holdem\Windows App Holdem.csproj", "{466DEFB1-9644-4AC2-8B57-E7934BD864E2}"
 EndProject

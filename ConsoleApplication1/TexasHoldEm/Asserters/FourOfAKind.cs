@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TexasHoldEm
+namespace TexasHoldEm.Core
 {
     class FourOfAKind : TexasHandAsserter
     {
